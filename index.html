@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Veronica Foltz | Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-light: #f7f7f7;
+      --text: #111111;
+      --text-muted: #555555;
+      --border: #e5e5e5;
+      --card-bg: #ffffff;
+      --button-black: #000000;
+      --soft-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* NAV */
+    nav {
+      display: flex;
+      gap: 2rem;
+      padding: 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+    }
+    nav a:hover {
+      opacity: 0.7;
+    }
+
+    /* LAYOUT */
+    .container {
+      width: 100%;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1rem;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 2rem 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      margin: 0;
+    }
+
+    .profile-photo {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 6px solid #ffffff;
+      box-shadow: 0 0 0 3px #e8e8e8, 0 6px 25px rgba(0,0,0,0.12);
+    }
+
+    .btn-black {
+      background: #000000;
+      color: #fff;
+      padding: 0.7rem 1.4rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .btn-black:hover {
+      background: #222;
+    }
+
+    /* SECTIONS */
+    section {
+      margin-top: 2rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* TAGS */
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+    }
+
+    .tag {
+      padding: 0.45rem 0.9rem;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: #fff;
+      font-size: 0.85rem;
+    }
+
+    /* PROJECTS GRID */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    @media(max-width: 720px) {
+      .projects-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 720px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      .hero-right {
+        align-items: center;
+      }
+      .hero-right h1 {
+        text-align: center;
+      }
+    }
+
+    /* PROJECT CARD */
+    .project-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: var(--soft-shadow);
+    }
+
+    .project-card h3 {
+      font-size: 1.2rem;
+      margin: 0 0 0.4rem;
+      font-weight: 600;
+    }
+
+    .project-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin: 0.4rem 0 1rem;
+    }
+
+    .project-buttons {
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .project-buttons a {
+      padding: 0.45rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+    }
+
+    .project-buttons a:hover {
+      background: var(--bg-light);
+    }
+    .hero-right .btn-black {
+      align-self: center;
+      margin-top: 1rem;
+    }
+    .contact-buttons-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap; /* keeps them from overflowing on small screens */
+      margin-top: 1rem;
+    }
+
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      text-decoration: none;
+      padding: 0.75rem 1.2rem;
+      border-radius: 8px;
+      background: #000;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 500;
+      transition: 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    .contact-btn:hover {
+      background: #fff;
+      color: #000;
+      border-color: #000;
+    }
+
+    .contact-btn i {
+      width: 18px;
+      height: 18px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>VERONICA FOLTZ</h1>
+
+      <img src="me.jpg" alt="Veronica Foltz" class="profile-photo" />
+
+      <a href="https://www.linkedin.com/in/veronica-foltz-3002a42b3/" 
+        target="_blank" 
+        class="btn-black">
+        Connect on LinkedIn
+      </a>
+    </section>
+
+    <!-- HIGHLIGHTS -->
+    <section id="about">
+      <h2>About Me</h2>
+      <p class="about-text">
+        I am a recent Computer Science graduate with previous web development experience and an interdisciplinary background that combines a B.S. in Computer Science, a bachelor’s degree in Developmental Psychology, and an MBA. This combination gives me a unique perspective when building software. My psychology background helps me think about user behavior and usability, while my business education helps me consider product strategy and real-world value alongside strong technical implementation.
+        <br><br>
+        I enjoy building full-stack applications that turn complex ideas into practical, intuitive software. Through academic work, personal projects, and open-source contributions, I have gained hands-on experience developing modern web applications, backend systems, APIs, and interactive games. I enjoy building software in my free time and continuously expanding my skills by contributing to open-source projects and exploring new technologies.
+        <br><br>
+        Outside of technology, I am an avid horse lover. 🐎
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2>Skills</h2>
+      <div class="tag-list">
+        <span class="tag">Python</span>
+        <span class="tag">JavaScript</span>
+        <span class="tag">React</span>
+        <span class="tag">FastAPI</span>
+        <span class="tag">Next.js</span>
+        <span class="tag">PostgreSQL</span>
+        <span class="tag">SQL</span>
+        <span class="tag">SQLAlchemy</span>
+        <span class="tag">REST APIs</span>
+        <span class="tag">JWT Authentication</span>
+        <span class="tag">Docker</span>
+        <span class="tag">Git & GitHub</span>
+        <span class="tag">Linux</span>
+        <span class="tag">C++</span>
+        <span class="tag">HTML & CSS</span>
+        <span class="tag">AWS</span>
+        <span class="tag">Data Structures</span>
+        <span class="tag">Object-Oriented Programming</span>
+        <span class="tag">C#</span>
+        <span class="tag">AI/ML Fundamentals</span>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+     <section id="projects">
+      <h2>Projects</h2>
+
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <h3>PantryPal AI</h3>
+          <p>
+            Built a full-stack AI-powered pantry management application with React, FastAPI, PostgreSQL, and SQLAlchemy. It includes JWT authentication, pantry inventory and expiration tracking, recipe suggestions, AI-generated recipes using the OpenAI API, and an interactive shopping list. The application is containerized with Docker and deployed on AWS using Amplify, EC2, and CloudFront.
+        
+          <p><strong>Tech:</strong> React, JavaScript, FastAPI, Python, PostgreSQL, SQLAlchemy, OpenAI API, Docker, AWS Amplify, EC2, CloudFront, JWT, Vite</p>
+        
+          <div class="project-buttons">
+            <a href="https://main.dyyad06ps29td.amplifyapp.com/" target="_blank">Demo</a>
+            <a href="https://github.com/veronica-foltz/pantrypal-ai" target="_blank">Code</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3>Stable Ops</h3>
+          <p>
+            Built a full-stack stable management application with React, FastAPI, PostgreSQL, and SQLAlchemy. It includes JWT authentication, role-based access, CRUD operations for horses, employees, and tasks, search and filtering, and a responsive frontend. The application is deployed using Vercel, Render, and Neon.
+          </p>
+        
+          <p><strong>Tech:</strong> React, JavaScript, FastAPI, Python, PostgreSQL, SQLAlchemy, JWT, REST API, Vite, AWS, EC2, S3, RDS, and CloudFront.</p>
+        
+          <div class="project-buttons">
+            <a href="https://d382jnf7k7igi0.cloudfront.net/" target="_blank">Demo</a>
+            <a href="https://github.com/veronica-foltz/stable-ops-api" target="_blank">Code</a>
+          </div>
+        </div>
+        
+        <div class="project-card">
+          <h3>Treasure Quest</h3>
+        
+          <p>
+            Built a fully playable 2D platformer using Godot and GDScript with multiple levels, enemy AI, collectibles, 
+            health management, settings menus, mobile touch controls, and web deployment. Implemented persistent game state,
+            collision detection, UI systems, and interactive gameplay mechanics.
+          </p>
+        
+          <p><strong>Tech:</strong> Godot 4, GDScript, HTML5 Web Export, Krita, Git, GitHub, itch.io</p>
+        
+          <div class="project-buttons">
+            <a href="https://veronica-foltz.itch.io/treasure-quest" target="_blank">Demo</a>
+            <a href="https://github.com/veronica-foltz/godot-treasure-quest" target="_blank">Code</a>
+          </div>
+        </div>
+    
+        <div class="project-card">
+          <h3>Smart Pricing Engine</h3>
+        
+          <p>
+            Built a full-stack pricing optimization tool that analyzes demand elasticity and generates dynamic price recommendations. 
+            The system includes real-time alerts, CSV export functionality, and an interactive dashboard to help retailers avoid stockouts 
+            and improve profit margins.
+          </p>
+        
+          <p><strong>Tech:</strong> Python, FastAPI, JavaScript, Machine Learning, REST APIs</p>
+        
+          <div class="project-buttons">
+            <a href="https://veronica-foltz.github.io/smart-pricing-engine/" target="_blank">Demo</a>
+            <a href="https://github.com/veronica-foltz/smart-pricing-engine" target="_blank">Code</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+
+      <div class="contact-buttons-row">
+
+        <a href="mailto:vfoltz1520@gmail.com" class="contact-btn">
+          <i data-feather="mail"></i>
+          <span>Email</span>
+        </a>
+
+        <a href="https://github.com/veronica-foltz" target="_blank" class="contact-btn">
+          <i data-feather="github"></i>
+          <span>GitHub</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/veronica-foltz-3002a42b3/" target="_blank" class="contact-btn">
+          <i data-feather="linkedin"></i>
+          <span>LinkedIn</span>
+        </a>
+
+      </div>
+    </section>
+
+  </div>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+      feather.replace();
+    </script>
+</body>
+
+</html>
+
+
